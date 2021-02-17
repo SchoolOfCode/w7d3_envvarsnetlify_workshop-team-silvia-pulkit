@@ -9,7 +9,7 @@ function App() {
 
   useEffect(()=>{
     async function getPokemon() {
-      let response = await fetch(`${process.env.REACT_APP_API_URL}${id}`);
+      let response = await fetch(`${process.env.REACT_APP_API_URL}/${id}`);
       let data = await response.json();
       console.log(data);
       setPokemon(data.name);
