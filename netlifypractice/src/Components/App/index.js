@@ -3,15 +3,13 @@ import React, { useState, useEffect} from "react";
 
 function App() {
 
-
-
   const [pokemon, setPokemon] = useState();
   const [image, setImage] = useState();
   const [id, setId] = useState(1);
 
   useEffect(()=>{
     async function getPokemon() {
-      let response = await fetch(process.env.REACT_APP_API_URL);
+      let response = await fetch(`${process.env.REACT_APP_API_URL}${id}`);
       let data = await response.json();
       console.log(data);
       setPokemon(data.name);
